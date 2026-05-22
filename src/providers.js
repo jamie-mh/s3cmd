@@ -218,6 +218,13 @@ exports.yandex = ({ region = "ru-central1" }) => ({
     website_endpoint: "",
 });
 
+exports.ovh = ({ region = "rbx" }) => ({
+    bucket_location: region,
+    host_base: `s3.${region}.io.cloud.ovh.net`,
+    host_bucket: `%(bucket).s3.${region}.io.cloud.ovh.net`,
+    website_endpoint: `%(bucket).s3.${region}.io.cloud.ovh.net`
+});
+
 tests.yandex = {
     giveInputs: {
         provider: "yandex",
